@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from flask import Flask
 from slackeventsapi import SlackEventAdapter
 from slack_sdk.errors import SlackApiError
+from emojicounter import emoji_counter
 
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -44,7 +45,7 @@ try:
 
     conversation_history = result["messages"]
 
-    # Print results
+    # Print number of messages in the channel
     logger.info("{} messages found in {}".format(len(conversation_history), channel_id))
     print("{} messages found in {}".format(len(conversation_history), channel_id))
     
@@ -58,3 +59,4 @@ except SlackApiError as e:
 
 if __name__ == "__main__":
     app.run(debug=True)
+    emoji_counter()
