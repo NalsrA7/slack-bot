@@ -1,4 +1,3 @@
-
 To use this program, first edit the date range in the 'daterange.py' file to the desired range.
 Then run the 'bot.py' script which will then return the emoji reactions on all messages within the desired range.
 
@@ -9,3 +8,7 @@ https://www.youtube.com/watch?v=KJ5bFv-IRFM
 coming up next:
 Next improvements. Use the oldest/latest arguments in the conversations.history function in the bot.py script. 
 This will prevent too many messages from being returned. 
+
+UPDATE:
+I have added a new argument to the bot.py script. 
+Now will only return messages within the date range provided in the 'daterange.py' file.

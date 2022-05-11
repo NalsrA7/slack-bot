@@ -8,6 +8,7 @@ from flask import Flask
 from slackeventsapi import SlackEventAdapter
 from slack_sdk.errors import SlackApiError
 from emojicounter import emoji_counter
+import daterange
 
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -41,7 +42,7 @@ try:
     # Call the conversations.history method using the WebClient
     # conversations.history returns the first 100 messages by default
     # These results are paginated, see: https://api.slack.com/methods/conversations.history$pagination
-    result = client.conversations_history(channel=channel_id)
+    result = client.conversations_history(channel=channel_id, limit=200, inclusive=True, latest=daterange.unix_end_date, oldest=daterange.unix_start_date)
 
     conversation_history = result["messages"]
 
