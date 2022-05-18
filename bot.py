@@ -26,7 +26,11 @@ logger = logging.getLogger(__name__)
 # Store conversation history
 conversation_history = []
 # ID of the channel you want to send the message to
-channel_id = "C0343DRCMEF"
+channel_id = "GTC02N30U"
+#analysts-assemble: C0343DRCMEF
+#leads: G035C5LEV
+#leads-sales: GTC02N30U
+
 
 try:
     # Call the conversations.history method using the WebClient
