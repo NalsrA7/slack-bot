@@ -9,6 +9,7 @@ from slackeventsapi import SlackEventAdapter
 from slack_sdk.errors import SlackApiError
 from emojicounter import emoji_counter
 import daterange
+import datetime
 
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -25,7 +26,7 @@ logger = logging.getLogger(__name__)
 # Store conversation history
 conversation_history = []
 # ID of the channel you want to send the message to
-channel_id = "C03ERHU5YBD"
+channel_id = "C0343DRCMEF"
 
 try:
     # Call the conversations.history method using the WebClient
@@ -37,6 +38,7 @@ try:
 
     # Print number of messages in the channel
     logger.info("{} messages found in {}".format(len(conversation_history), channel_id))
+    print("Start date: ", datetime.datetime(daterange.s_year, daterange.s_month, daterange.s_day),"\nEnd date:", datetime.datetime(daterange.e_year, daterange.e_month, daterange.e_day))
     print("{} messages found in {}".format(len(conversation_history), channel_id))
     
     with open('conversations.json', 'w') as outfile:
