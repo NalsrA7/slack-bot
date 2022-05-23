@@ -1,6 +1,4 @@
 import json
-import time
-import datetime
 from collections import Counter
 from daterange import unix_start_date, unix_end_date
 
@@ -36,9 +34,10 @@ def emoji_counter():
         for key, value in message.items():
             if key == "reactions":
                 
-                for key2, value2 in value[0].items():
-                    if key2 == "name":
-                        emojis.append(value2)
+                for i in value:
+                    for key2, value2 in i.items():
+                        if key2 == "name":
+                            emojis.append(value2)
             
             else:
                 pass

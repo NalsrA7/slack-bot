@@ -10,12 +10,12 @@ Start and End dates for use in the bot.py script and emojicounter.py function.
 ### +++++++++++++++++ ###
 
 # Start Date (if single digit day/month, DO NOT include a leading zero)
-s_day = 18
-s_month = 5
-s_year = 2022
+s_day = 1
+s_month = 11
+s_year = 2021
 
 # Start Date (if single digit day/month, DO NOT include a leading zero)
-e_day = 19
+e_day = 23
 e_month = 5
 e_year = 2022
 

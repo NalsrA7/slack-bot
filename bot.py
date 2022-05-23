@@ -26,17 +26,18 @@ logger = logging.getLogger(__name__)
 # Store conversation history
 conversation_history = []
 # ID of the channel you want to send the message to
-channel_id = "GTC02N30U"
+channel_id = "C025W5L0Z"
 #analysts-assemble: C0343DRCMEF
 #leads: G035C5LEV
 #leads-sales: GTC02N30U
+#general: C025W5L0Z
 
 
 try:
     # Call the conversations.history method using the WebClient
     # conversations.history returns the first 100 messages by default
     # These results are paginated, see: https://api.slack.com/methods/conversations.history$pagination
-    result = client.conversations_history(channel=channel_id, limit=200, inclusive=True, latest=daterange.unix_end_date, oldest=daterange.unix_start_date)
+    result = client.conversations_history(channel=channel_id, limit=1000, inclusive=True, latest=daterange.unix_end_date, oldest=daterange.unix_start_date)
 
     conversation_history = result["messages"]
 
