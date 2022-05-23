@@ -1,6 +1,7 @@
 # Potentially sensitive information
 conversations.json
 *.csv
+*.xlsx
 
 # ngrok
 ngrok.exe
